@@ -35,12 +35,18 @@
   flex-direction: column;
   gap: 1.5rem;
   color: var(--paper);
+  /* keep console visible on smaller screens by constraining window height
+     and allowing the grid to scroll inside the window */
+  max-height: 70vh;
 }
 
 .maze-grid {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  /* allow grid to scroll while keeping the console visible */
+  flex: 1 1 auto;
+  overflow: auto;
 }
 
 .maze-row {
@@ -80,6 +86,15 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.8rem;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0;
+  color: var(--paper);
 }
 
 .maze-console button {

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { LEVELS } from "../game/levelData";
 import { getStars } from "../game/starStorage";
+import { getAchievementLevel, getAchievementTier } from '../game/achievementStorage';
 import "../styles/levelSelect.css";
 
 const LevelSelectPage = () => {
@@ -24,9 +25,14 @@ const LevelSelectPage = () => {
     <div className="level-select-shell">
       <header className="level-select-header">
         <h1 className="level-select-title">SELECT LEVEL</h1>
-        <button className="back-button" onClick={goBack}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 12}}>
+          <div style={{fontSize:12}}>
+            Achievement: <strong>{getAchievementLevel()}</strong> — {getAchievementTier()}
+          </div>
+          <button className="back-button" onClick={goBack}>
           ← BACK
-        </button>
+          </button>
+        </div>
       </header>
 
       <main className="level-select-grid">

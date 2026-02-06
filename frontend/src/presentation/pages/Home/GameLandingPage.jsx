@@ -44,6 +44,10 @@ const GameLandingPage = () => {
     navigate("/levels");
   };
 
+  const goOptions = () => {
+    navigate('/options');
+  };
+
   return (
     <div className="retro-shell">
       <div className="retro-hud">
@@ -52,6 +56,7 @@ const GameLandingPage = () => {
         <span>◎ 01 +0</span>
       </div>
       <div className="retro-window">
+        <h2 className="dashboard-title">Maze Game</h2>
         <div className="maze-grid">
           {pattern.map((row, r) => (
             <div className="maze-row" key={r}>
@@ -67,7 +72,7 @@ const GameLandingPage = () => {
         <div className="maze-console">
           <button onClick={goPlay}>PLAY</button>
           <button>CONTINUE</button>
-          <button>OPTIONS</button>
+          <button onClick={goOptions}>OPTIONS</button>
           <button onClick={logout}>EXIT</button>
         </div>
       </div>

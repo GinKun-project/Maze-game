@@ -10,6 +10,8 @@
   flex: 1;
   display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-right-panel {
@@ -40,10 +42,12 @@
   background: #1e293b;
   border: 4px solid #3b82f6;
   border-radius: 15px;
-  padding: 30px;
+  padding: 24px;
   text-align: center;
   color: white;
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  width: min(520px, 92%);
+  max-width: 92%;
 }
 
 .overlay-content h2 {
@@ -57,11 +61,18 @@
   color: #e2e8f0;
 }
 
+.overlay-content .overlay-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
 .overlay-content button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
+  display: inline-block;
+  min-width: 140px;
+  padding: 10px 14px;
   background: #3b82f6;
   border: 2px solid #60a5fa;
   border-radius: 8px;

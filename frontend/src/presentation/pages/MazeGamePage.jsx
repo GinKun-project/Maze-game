@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { LEVELS } from "../game/levelData";
 import { useGameEngine } from "../hooks/useGameEngine";
 import HudBar from "../components/game/HudBar";
+import { addLevelCompletion } from "../game/achievementStorage";
 import MazeRenderer from "../components/game/MazeRenderer";
 import Dpad from "../components/game/Dpad";
 import "../styles/gameScreen.css";
@@ -58,6 +59,21 @@ const MazeGamePage = () => {
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [game.paused, game.gameOver, game.win]);
+
+  useEffect(() => {
+    if (!game.win) return;
+    try {
+      addLevelCompletion(levelNum);
+      const raw = localStorage.getItem('mazeOptions');
+      const opts = raw ? JSON.parse(raw) : { showAchievementToast: true };
+      if (opts.showAchievementToast) {
+        // simple notification for now
+        alert(`Achievement: Level ${levelNum} completed!`);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, [game.win]);
 
   const goBack = () => {
     navigate("/levels");

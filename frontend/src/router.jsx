@@ -6,6 +6,7 @@ import GameLandingPage from "./presentation/pages/Home/GameLandingPage.jsx";
 import LevelSelectPage from "./presentation/pages/LevelSelectPage.jsx";
 import MazeGamePage from "./presentation/pages/MazeGamePage.jsx";
 import RequireAuth from "./presentation/components/auth/RequireAuth.jsx";
+import OptionsPage from "./presentation/pages/OptionsPage.jsx";
 
 const AppRouter = () => {
   return (
@@ -26,6 +27,14 @@ const AppRouter = () => {
         element={
           <RequireAuth>
             <LevelSelectPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/options"
+        element={
+          <RequireAuth>
+            <OptionsPage />
           </RequireAuth>
         }
       />
