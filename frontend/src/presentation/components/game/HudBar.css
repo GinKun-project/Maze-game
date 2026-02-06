@@ -1,0 +1,67 @@
+.hud-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  border: 3px solid #1e40af;
+  border-radius: 10px;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', monospace;
+  color: white;
+}
+
+.hud-left, .hud-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hud-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hud-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.hearts {
+  display: flex;
+  gap: 5px;
+}
+
+.heart {
+  font-size: 20px;
+  color: #ef4444;
+}
+
+.heart.empty {
+  color: #6b7280;
+}
+
+.pause-button {
+  background: #374151;
+  border: 2px solid #4b5563;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pause-button:hover {
+  background: #4b5563;
+}
+
+.time-display {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fbbf24;
+  text-shadow: 0 0 5px #f59e0b;
+}
